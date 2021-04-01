@@ -1,0 +1,6 @@
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\IoTEvKontrol.Business.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\IoTEvKontrol.Business.pdb
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\obj\Debug\IoTEvKontrol.Business.csprojAssemblyReference.cache
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\obj\Debug\IoTEvKontrol.Business.csproj.CoreCompileInputs.cache
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\obj\Debug\IoTEvKontrol.Business.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\obj\Debug\IoTEvKontrol.Business.pdb

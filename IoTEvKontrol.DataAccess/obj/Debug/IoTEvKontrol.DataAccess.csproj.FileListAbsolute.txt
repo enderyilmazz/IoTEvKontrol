@@ -1,0 +1,5 @@
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\IoTEvKontrol.DataAccess.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\IoTEvKontrol.DataAccess.pdb
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.pdb
