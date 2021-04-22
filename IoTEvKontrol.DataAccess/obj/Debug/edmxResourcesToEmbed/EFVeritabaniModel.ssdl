@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="evkontrolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cihazlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OdaID" Type="int" />
+    <Property Name="CihazAdi" Type="char" MaxLength="50" />
+    <Property Name="Tip" Type="char" MaxLength="20" />
+    <Property Name="Numara" Type="char" MaxLength="20" />
+    <Property Name="Durum" Type="char" MaxLength="20" />
+    <Property Name="Aciklama" Type="char" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Ev">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EvAdi" Type="char" MaxLength="25" />
+    <Property Name="Telefon" Type="char" MaxLength="15" />
+    <Property Name="Adres" Type="char" MaxLength="100" />
+    <Property Name="IpAdres" Type="char" MaxLength="15" />
+    <Property Name="Aciklama" Type="char" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolID" Type="int" />
+    <Property Name="Ad" Type="char" MaxLength="15" />
+    <Property Name="Soyad" Type="char" MaxLength="15" />
+    <Property Name="Telefon" Type="char" MaxLength="15" />
+    <Property Name="Eposta" Type="char" MaxLength="25" />
+    <Property Name="Resim" Type="char" MaxLength="15" />
+    <Property Name="KullaniciAdi" Type="char" MaxLength="50" />
+    <Property Name="Sifre" Type="char" MaxLength="50" />
+    <Property Name="Aciklama" Type="char" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Oda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EvID" Type="int" />
+    <Property Name="OdaAdi" Type="char" MaxLength="100" />
+    <Property Name="Aciklama" Type="char" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Roller">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolAdi" Type="char" MaxLength="25" />
+    <Property Name="Aciklama" Type="char" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Sistem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciID" Type="int" />
+    <Property Name="OdaID" Type="int" />
+    <Property Name="CihazID" Type="int" />
+    <Property Name="IslemTipi" Type="char" MaxLength="10" />
+    <Property Name="Tarih" Type="char" MaxLength="20" />
+    <Property Name="Veri" Type="char" MaxLength="50" />
+    <Property Name="Durum" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Cihazlar_Oda">
+    <End Role="Oda" Type="Self.Oda" Multiplicity="0..1" />
+    <End Role="Cihazlar" Type="Self.Cihazlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oda">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cihazlar">
+        <PropertyRef Name="OdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullanicilar_Roller">
+    <End Role="Roller" Type="Self.Roller" Multiplicity="0..1" />
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roller">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kullanicilar">
+        <PropertyRef Name="RolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oda_Ev">
+    <End Role="Ev" Type="Self.Ev" Multiplicity="0..1" />
+    <End Role="Oda" Type="Self.Oda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ev">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Oda">
+        <PropertyRef Name="EvID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sistem_Cihazlar">
+    <End Role="Cihazlar" Type="Self.Cihazlar" Multiplicity="0..1" />
+    <End Role="Sistem" Type="Self.Sistem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cihazlar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sistem">
+        <PropertyRef Name="CihazID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sistem_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+    <End Role="Sistem" Type="Self.Sistem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sistem">
+        <PropertyRef Name="KullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sistem_Oda">
+    <End Role="Oda" Type="Self.Oda" Multiplicity="0..1" />
+    <End Role="Sistem" Type="Self.Sistem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oda">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sistem">
+        <PropertyRef Name="OdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="evkontrolModelStoreContainer">
+    <EntitySet Name="Cihazlar" EntityType="Self.Cihazlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ev" EntityType="Self.Ev" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Oda" EntityType="Self.Oda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roller" EntityType="Self.Roller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sistem" EntityType="Self.Sistem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cihazlar_Oda" Association="Self.FK_Cihazlar_Oda">
+      <End Role="Oda" EntitySet="Oda" />
+      <End Role="Cihazlar" EntitySet="Cihazlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullanicilar_Roller" Association="Self.FK_Kullanicilar_Roller">
+      <End Role="Roller" EntitySet="Roller" />
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oda_Ev" Association="Self.FK_Oda_Ev">
+      <End Role="Ev" EntitySet="Ev" />
+      <End Role="Oda" EntitySet="Oda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sistem_Cihazlar" Association="Self.FK_Sistem_Cihazlar">
+      <End Role="Cihazlar" EntitySet="Cihazlar" />
+      <End Role="Sistem" EntitySet="Sistem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sistem_Kullanicilar" Association="Self.FK_Sistem_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Sistem" EntitySet="Sistem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sistem_Oda" Association="Self.FK_Sistem_Oda">
+      <End Role="Oda" EntitySet="Oda" />
+      <End Role="Sistem" EntitySet="Sistem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ef558eba340a4dda8489d438139ee2e9" Name="Diagram1">
+        <EntityTypeShape EntityType="evkontrolModel.Cihazlar" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="evkontrolModel.Ev" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="evkontrolModel.Kullanicilar" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="evkontrolModel.Oda" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="evkontrolModel.Roller" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="evkontrolModel.Sistem" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="evkontrolModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="evkontrolModel.FK_Cihazlar_Oda" ManuallyRouted="false" />
+        <AssociationConnector Association="evkontrolModel.FK_Sistem_Cihazlar" ManuallyRouted="false" />
+        <AssociationConnector Association="evkontrolModel.FK_Oda_Ev" ManuallyRouted="false" />
+        <AssociationConnector Association="evkontrolModel.FK_Kullanicilar_Roller" ManuallyRouted="false" />
+        <AssociationConnector Association="evkontrolModel.FK_Sistem_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="evkontrolModel.FK_Sistem_Oda" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -61,3 +61,9 @@ C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\IoTEvKontrol.Busin
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\IoTEvKontrol.DataAccess.dll
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\IoTEvKontrol.Business.pdb
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\IoTEvKontrol.DataAccess.pdb
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\EntityFramework.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\IoTEvKontrol.Business.dll.config
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\IoTEvKontrol.DataAccess.dll.config
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\EntityFramework.xml
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\EntityFramework.SqlServer.xml

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IoTEvKontrol.Business
 {
-    public class Class1
+    class Kullanicilar
     {
     }
 }
