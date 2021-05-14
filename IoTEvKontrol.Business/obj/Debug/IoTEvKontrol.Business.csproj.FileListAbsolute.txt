@@ -13,3 +13,7 @@ C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\obj\Debug\IoTEvKo
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\IoTEvKontrol.DataAccess.dll
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\IoTEvKontrol.DataAccess.pdb
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\IoTEvKontrol.DataAccess.dll.config
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Business\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

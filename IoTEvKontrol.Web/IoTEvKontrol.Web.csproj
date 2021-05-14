@@ -50,6 +50,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -74,7 +80,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CihazEkle.aspx" />
+    <Content Include="Cihazlar.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EvBilgisi.aspx" />
+    <Content Include="Giris.aspx" />
+    <Content Include="KullaniciEkle.aspx" />
+    <Content Include="Kullanicilar.aspx" />
+    <Content Include="OdaEkle.aspx" />
+    <Content Include="Odalar.aspx" />
     <Content Include="Resource\Template\dist\css\adminlte.css" />
     <Content Include="Resource\Template\dist\css\adminlte.min.css" />
     <Content Include="Resource\Template\dist\css\alt\adminlte.components.css" />
@@ -2027,6 +2041,8 @@
     <Content Include="Resource\Template\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Resource\Template\plugins\uplot\uPlot.min.css" />
     <Content Include="Resource\Template\starter.html" />
+    <Content Include="RolEkle.aspx" />
+    <Content Include="Roller.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2037,6 +2053,20 @@
     <Compile Include="Anasayfa.Master.designer.cs">
       <DependentUpon>Anasayfa.Master</DependentUpon>
     </Compile>
+    <Compile Include="CihazEkle.aspx.cs">
+      <DependentUpon>CihazEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CihazEkle.aspx.designer.cs">
+      <DependentUpon>CihazEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cihazlar.aspx.cs">
+      <DependentUpon>Cihazlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cihazlar.aspx.designer.cs">
+      <DependentUpon>Cihazlar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2044,7 +2074,63 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EvBilgisi.aspx.cs">
+      <DependentUpon>EvBilgisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EvBilgisi.aspx.designer.cs">
+      <DependentUpon>EvBilgisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Giris.aspx.cs">
+      <DependentUpon>Giris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Giris.aspx.designer.cs">
+      <DependentUpon>Giris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KullaniciEkle.aspx.cs">
+      <DependentUpon>KullaniciEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KullaniciEkle.aspx.designer.cs">
+      <DependentUpon>KullaniciEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanicilar.aspx.cs">
+      <DependentUpon>Kullanicilar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kullanicilar.aspx.designer.cs">
+      <DependentUpon>Kullanicilar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OdaEkle.aspx.cs">
+      <DependentUpon>OdaEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OdaEkle.aspx.designer.cs">
+      <DependentUpon>OdaEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Odalar.aspx.cs">
+      <DependentUpon>Odalar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Odalar.aspx.designer.cs">
+      <DependentUpon>Odalar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolEkle.aspx.cs">
+      <DependentUpon>RolEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RolEkle.aspx.designer.cs">
+      <DependentUpon>RolEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roller.aspx.cs">
+      <DependentUpon>Roller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roller.aspx.designer.cs">
+      <DependentUpon>Roller.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Anasayfa.Master" />

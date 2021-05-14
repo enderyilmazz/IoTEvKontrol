@@ -94,7 +94,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="#" class="brand-link">
+            <a href="Default.aspx" class="brand-link">
                 <img src="Resource/Template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">IoT Ev Kontrol</span>
             </a>
@@ -128,27 +128,10 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Kontrol Panel
-                <i class="right fas fa-angle-left"></i>
-                                </p>
+                            <a href="Default.aspx" class="nav-link  active">
+                                <i class="fas fa-tachometer-alt nav-icon"></i>
+                                <p>Kontrol Panel</p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Aktif Menü</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pasif Menü</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">
@@ -161,15 +144,21 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Aktif Menü</p>
+                                    <a href="EvBilgisi.aspx" class="nav-link">
+                                        <i class="fas fa-info-circle nav-icon"></i>
+                                        <p>Ev Bilgisi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pasif Menü</p>
+                                    <a href="Odalar.aspx" class="nav-link">
+                                        <i class="fas fa-list-alt nav-icon"></i>
+                                        <p>Odalar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="OdaEkle.aspx" class="nav-link">
+                                        <i class="fas fa-plus-square nav-icon"></i>
+                                        <p>Oda Ekle</p>
                                     </a>
                                 </li>
                             </ul>
@@ -185,15 +174,39 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Aktif Menü</p>
+                                    <a href="Cihazlar.aspx" class="nav-link">
+                                        <i class="fas fa-list-alt nav-icon"></i>
+                                        <p>Cihazlar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pasif Menü</p>
+                                    <a href="CihazEkle.aspx" class="nav-link">
+                                        <i class="fas fa-plus-square nav-icon"></i>
+                                        <p>Cihaz Ekle</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user-shield"></i>
+                                <p>
+                                    Rol
+                <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="Roller.aspx" class="nav-link">
+                                        <i class="fas fa-list-alt nav-icon"></i>
+                                        <p>Roller</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="RolEkle.aspx" class="nav-link">
+                                        <i class="fas fa-plus-square nav-icon"></i>
+                                        <p>Rol Ekle</p>
                                     </a>
                                 </li>
                             </ul>
@@ -203,21 +216,21 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Kullanıcılar
+                                    Kullanıcı
                 <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Aktif Menü</p>
+                                    <a href="Kullanicilar.aspx" class="nav-link">
+                                        <i class="fas fa-list-alt nav-icon"></i>
+                                        <p>Kullanıcılar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pasif Menü</p>
+                                    <a href="KullaniciEkle.aspx" class="nav-link">
+                                        <i class="fas fa-plus-square nav-icon"></i>
+                                        <p>Kullanıcı Ekle</p>
                                     </a>
                                 </li>
                             </ul>
@@ -233,15 +246,15 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Aktif Menü</p>
+                                        <p>Panel Ayarları</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Pasif Menü</p>
+                                        <p>Bağlantı Ayarları</p>
                                     </a>
                                 </li>
                             </ul>
@@ -255,40 +268,12 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Kontrol Panel</h1>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
-                                <li class="breadcrumb-item active">Kontrol Panel</li>
-                            </ol>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
                 </div>
-                <!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-            <div class="content">
-                <div class="container-fluid">
-                    <form id="form1" runat="server">
-                        <div>
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- /.content -->
+            </form>
         </div>
         <!-- /.content-wrapper -->
 
@@ -316,5 +301,11 @@
     <script src="Resource/Template/plugins/jquery/jquery.min.js"></script>
     <script src="Resource/Template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="Resource/Template/dist/js/adminlte.min.js"></script>
+    <script src="Resource/Template/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script>
+        $(function () {
+            $('.knob').knob({})
+        })
+    </script>
 </body>
 </html>

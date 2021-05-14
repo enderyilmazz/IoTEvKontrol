@@ -14,6 +14,7 @@ namespace IoTEvKontrol.Business
 
         public string VeriGonderAl()
         {
+            string sonuc;
             System.Net.Sockets.TcpClient tcpClient = new System.Net.Sockets.TcpClient();
             tcpClient.Connect(Ip, Port);
             System.Net.Sockets.NetworkStream netStream = tcpClient.GetStream();
@@ -26,7 +27,7 @@ namespace IoTEvKontrol.Business
             {
                 tcpClient.Close();
                 netStream.Close();
-                return "Veri Gönderilemedi!";
+                sonuc = "Veri Gönderilemedi!";
             }
 
             if (netStream.CanRead)
@@ -34,16 +35,17 @@ namespace IoTEvKontrol.Business
                 byte[] bytes = new byte[tcpClient.ReceiveBufferSize];
                 netStream.Read(bytes, 0, (int)tcpClient.ReceiveBufferSize);
                 string returndata = Encoding.UTF8.GetString(bytes);
-                return returndata;
+                sonuc = returndata;
             }
             else
             {
                 tcpClient.Close();
                 netStream.Close();
-                return "Veri Okunamadı!";
+                sonuc = "Veri Okunamadı!";
             }
+            tcpClient.Close();
             netStream.Close();
-            return "";
+            return sonuc;
         }
     }
 }

@@ -10,3 +10,7 @@ C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Entit
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.csprojAssemblyReference.cache
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.csproj.CopyComplete
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
