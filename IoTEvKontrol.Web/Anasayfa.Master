@@ -14,290 +14,237 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Anasayfa</a>
-                </li>
-            </ul>
-
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <div class="navbar-search-block">
-                        <form class="form-inline">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Ara" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-navbar" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                        <i class="fas fa-times"></i>
-                                    </button>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                            <i class="fas fa-search"></i>
+                        </a>
+                        <div class="navbar-search-block">
+                            <form class="form-inline">
+                                <div class="input-group input-group-sm">
+                                    <input class="form-control form-control-navbar" type="search" placeholder="Ara" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-navbar" type="submit">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i>4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                            <i class="fas fa-expand-arrows-alt"></i>
                         </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i>8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                            <i class="fas fa-th-large"></i>
                         </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i>3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="Default.aspx" class="brand-link">
-                <img src="Resource/Template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">IoT Ev Kontrol</span>
-            </a>
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="Resource/Template/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Ender Yılmaz</a>
-                    </div>
-                </div>
-
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Ara" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton CssClass="nav-link" ID="Cikis" runat="server" OnClick="Cikis_Click">                       
+                            <i class="fas fa-sign-out-alt"></i>
+                        </asp:LinkButton>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <a href="Default.aspx" class="brand-link">
+                    <img src="Resource/Template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <span class="brand-text font-weight-light">IoT Ev Kontrol</span>
+                </a>
+                <div class="sidebar">
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="Resource/Template/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <asp:LinkButton CssClass="d-block" ID="kullaniciBilgi" runat="server">Ender Yılmaz</asp:LinkButton>
                         </div>
                     </div>
+                    <div class="form-inline">
+                        <div class="input-group" data-widget="sidebar-search">
+                            <input class="form-control form-control-sidebar" type="search" placeholder="Ara" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-sidebar">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                            <li class="nav-item">
+                                <a href="Default.aspx" class="nav-link  active">
+                                    <i class="fas fa-tachometer-alt nav-icon"></i>
+                                    <p>Kontrol Panel</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-home"></i>
+                                    <p>
+                                        Ev
+                <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="EvBilgisi.aspx" class="nav-link">
+                                            <i class="fas fa-info-circle nav-icon"></i>
+                                            <p>Ev Bilgisi</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="Odalar.aspx" class="nav-link">
+                                            <i class="fas fa-list-alt nav-icon"></i>
+                                            <p>Odalar</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="OdaEkle.aspx" class="nav-link">
+                                            <i class="fas fa-plus-square nav-icon"></i>
+                                            <p>Oda Ekle</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-microchip"></i>
+                                    <p>
+                                        Cihaz
+                <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="Cihazlar.aspx" class="nav-link">
+                                            <i class="fas fa-list-alt nav-icon"></i>
+                                            <p>Cihazlar</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="CihazEkle.aspx" class="nav-link">
+                                            <i class="fas fa-plus-square nav-icon"></i>
+                                            <p>Cihaz Ekle</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-user-shield"></i>
+                                    <p>
+                                        Rol
+                <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="Roller.aspx" class="nav-link">
+                                            <i class="fas fa-list-alt nav-icon"></i>
+                                            <p>Roller</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="RolEkle.aspx" class="nav-link">
+                                            <i class="fas fa-plus-square nav-icon"></i>
+                                            <p>Rol Ekle</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Kullanıcı
+                <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="Kullanicilar.aspx" class="nav-link">
+                                            <i class="fas fa-list-alt nav-icon"></i>
+                                            <p>Kullanıcılar</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="KullaniciEkle.aspx" class="nav-link">
+                                            <i class="fas fa-plus-square nav-icon"></i>
+                                            <p>Kullanıcı Ekle</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-cogs"></i>
+                                    <p>
+                                        Ayarlar
+                <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Panel Ayarları</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Bağlantı Ayarları</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+
                 </div>
-
-                <!-- Sol Menü -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-                        <li class="nav-item">
-                            <a href="Default.aspx" class="nav-link  active">
-                                <i class="fas fa-tachometer-alt nav-icon"></i>
-                                <p>Kontrol Panel</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-home"></i>
-                                <p>
-                                    Ev
-                <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="EvBilgisi.aspx" class="nav-link">
-                                        <i class="fas fa-info-circle nav-icon"></i>
-                                        <p>Ev Bilgisi</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="Odalar.aspx" class="nav-link">
-                                        <i class="fas fa-list-alt nav-icon"></i>
-                                        <p>Odalar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="OdaEkle.aspx" class="nav-link">
-                                        <i class="fas fa-plus-square nav-icon"></i>
-                                        <p>Oda Ekle</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-microchip"></i>
-                                <p>
-                                    Cihaz
-                <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="Cihazlar.aspx" class="nav-link">
-                                        <i class="fas fa-list-alt nav-icon"></i>
-                                        <p>Cihazlar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="CihazEkle.aspx" class="nav-link">
-                                        <i class="fas fa-plus-square nav-icon"></i>
-                                        <p>Cihaz Ekle</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-user-shield"></i>
-                                <p>
-                                    Rol
-                <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="Roller.aspx" class="nav-link">
-                                        <i class="fas fa-list-alt nav-icon"></i>
-                                        <p>Roller</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="RolEkle.aspx" class="nav-link">
-                                        <i class="fas fa-plus-square nav-icon"></i>
-                                        <p>Rol Ekle</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Kullanıcı
-                <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="Kullanicilar.aspx" class="nav-link">
-                                        <i class="fas fa-list-alt nav-icon"></i>
-                                        <p>Kullanıcılar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="KullaniciEkle.aspx" class="nav-link">
-                                        <i class="fas fa-plus-square nav-icon"></i>
-                                        <p>Kullanıcı Ekle</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cogs"></i>
-                                <p>
-                                    Ayarlar
-                <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Panel Ayarları</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Bağlantı Ayarları</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </nav>
-
-            </div>
-        </aside>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <form id="form1" runat="server">
+            </aside>
+            <div class="content-wrapper">
                 <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
-            </form>
+            </div>
+            <aside class="control-sidebar control-sidebar-dark">
+                <div class="p-3">
+                    <h5>Title</h5>
+                    <p>Sidebar content</p>
+                </div>
+            </aside>
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-inline">
+                    Ender Yılmaz - 171602012
+                </div>
+                <strong>Telif Hakkı &copy; 2021 <a href="#">IoT Ev Kontrol</a>.</strong> Tüm Hakları Saklıdır.
+            </footer>
         </div>
-        <!-- /.content-wrapper -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
-
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="float-right d-none d-sm-inline">
-                Ender Yılmaz - 171602012
-            </div>
-            <!-- Default to the left -->
-            <strong>Telif Hakkı &copy; 2021 <a href="#">IoT Ev Kontrol</a>.</strong> Tüm Hakları Saklıdır.
-        </footer>
-    </div>
-
+    </form>
     <script src="Resource/Template/plugins/jquery/jquery.min.js"></script>
     <script src="Resource/Template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="Resource/Template/dist/js/adminlte.min.js"></script>

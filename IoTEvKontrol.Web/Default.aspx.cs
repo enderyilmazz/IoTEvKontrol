@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace IoTEvKontrol.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/Giris.aspx");
+            }
             //string baglanti = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
             //SqlConnection baglan = new SqlConnection(baglanti);
             //SqlCommand sorgu = new SqlCommand("SELECT * FROM Roller",baglan);

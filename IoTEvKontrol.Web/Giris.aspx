@@ -14,24 +14,34 @@
 </head>
 <body class="hold-transition login-page">
     <div class="login-box">
+        <asp:PlaceHolder ID="HataMesaj" runat="server" Visible="false">
+            <div class="col-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Hata!</strong>
+                    <small>Kullanıcı adı veya şifre yanlış.</small>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+            </div>
+        </asp:PlaceHolder>
         <div class="login-logo">
             <a href="#"><b>IoTEv</b>Kontrol</a>
         </div>
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sisteme Giriş</p>
-
-                <form action="Default.aspx" method="post">
+                <form id="form1" runat="server">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Kullanıcı Adı">
+                        <asp:TextBox CssClass="form-control" runat="server" ID="KullaniciAdi" placeholder="Kullanıcı Adı" />
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Şifre">
+                        <asp:TextBox CssClass="form-control" runat="server" ID="Sifre" TextMode="Password" placeholder="Şifre" />
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -47,29 +57,16 @@
                                 </label>
                             </div>
                         </div>
-                        <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+                            <asp:Button CssClass="btn btn-primary btn-block" runat="server" OnClick="Giris_Click" Text="Giriş Yap" />
                         </div>
-                        <!-- /.col -->
                     </div>
                 </form>
-
-                <p class="mb-1">
-                    <a href="forgot-password.html">Şifremi unuttum</a>
-                </p>
             </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
-
     <script src="Resource/Template/plugins/jquery/jquery.min.js"></script>
     <script src="Resource/Template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="Resource/Template/dist/js/adminlte.min.js"></script>
-
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
 </body>
 </html>

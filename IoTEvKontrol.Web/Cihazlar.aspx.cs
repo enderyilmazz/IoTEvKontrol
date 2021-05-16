@@ -11,7 +11,10 @@ namespace IoTEvKontrol.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/Giris.aspx");
+            }
         }
     }
 }

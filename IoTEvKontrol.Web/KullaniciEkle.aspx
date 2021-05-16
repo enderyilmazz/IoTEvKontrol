@@ -21,6 +21,30 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <asp:PlaceHolder ID="BasariMesaj" runat="server" Visible="false">
+                    <div class="col-12">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Başarılı!</strong>
+                            Yeni kullanıcı kaydedildi.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </asp:PlaceHolder>
+                <asp:PlaceHolder ID="HataMesaj" runat="server" Visible="false">
+                    <div class="col-12">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Başarısız!</strong>
+                            Yeni kullanıcı kaydedilemedi.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </asp:PlaceHolder>
+            </div>
+            <div class="row">
                 <div class="col-12">
                     <div class="card card-info">
                         <div class="card-header">
@@ -41,87 +65,86 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="adText">Ad</label>
-                                        <input type="text" class="form-control" id="adText" placeholder="Ad">
+                                        <asp:Label runat="server" AssociatedControlID="Ad">Ad</asp:Label>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="Ad" placeholder="Ad" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="soyadText">Soyad</label>
-                                        <input type="text" class="form-control" id="soyadText" placeholder="Soyad">
+                                        <asp:Label runat="server" AssociatedControlID="Soyad">Soyad</asp:Label>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="Soyad" placeholder="Soyad" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="telefonText">Telefon</label>
+                                        <asp:Label runat="server" AssociatedControlID="Telefon">Telefon</asp:Label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" id="telefonText" placeholder="Telefon">
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="Telefon" placeholder="Telefon" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="epostaText">E-posta</label>
+                                        <asp:Label runat="server" AssociatedControlID="Eposta">E-posta</asp:Label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                             </div>
-                                            <input type="email" class="form-control" id="epostaText" placeholder="E-posta">
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="Eposta" TextMode="Email" placeholder="E-posta" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="kullaniciAdiText">Kullanıcı Adı</label>
+                                        <asp:Label runat="server" AssociatedControlID="KullaniciAdi">Kullanıcı Adı</asp:Label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">@</span>
                                             </div>
-                                            <input type="text" class="form-control" id="kullaniciAdiText" placeholder="Kullanıcı Adı">
+                                            <asp:TextBox CssClass="form-control" type="text" runat="server" ID="KullaniciAdi" placeholder="Kullanıcı Adı" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="sifreText">Şifre</label>
+                                        <asp:Label runat="server" AssociatedControlID="Sifre">Şifre</asp:Label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                             </div>
-                                            <input type="password" class="form-control" id="sifreText" placeholder="Şifre">
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="Sifre" TextMode="Password" placeholder="Şifre" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="sifreTekrarText">Şifre Tekrar</label>
+                                        <asp:Label runat="server" AssociatedControlID="SifreTekrar">Şifre Tekrar</asp:Label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                             </div>
-                                            <input type="password" class="form-control" id="sifreTekrarText" placeholder="Şifre Tekrar">
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="SifreTekrar" TextMode="Password" placeholder="Şifre Tekrar" />
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>Rol</label>
-                                                <select class="form-control">
-                                                    <option>Üst Düz. Yönetici</option>
-                                                    <option>Yönetici</option>
-                                                    <option>Kullanıcı</option>
-                                                    <option>Misafir</option>
-                                                    <option>Test</option>
-                                                </select>
+                                                <asp:Label runat="server" AssociatedControlID="Rol">Rol</asp:Label>
+                                                <asp:DropDownList CssClass="form-control" ID="Rol" runat="server">
+                                                    <asp:ListItem>Üst Düz. Yönetici</asp:ListItem>
+                                                    <asp:ListItem>Yönetici</asp:ListItem>
+                                                    <asp:ListItem>Kullanıcı</asp:ListItem>
+                                                    <asp:ListItem>Misafir</asp:ListItem>
+                                                </asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>Kullanıcı Durum</label>
-                                                <select class="form-control">
-                                                    <option>Aktif</option>
-                                                    <option>Pasif</option>
-                                                </select>
+                                                <asp:Label runat="server" AssociatedControlID="Durum">Durum</asp:Label>
+                                                <asp:DropDownList CssClass="form-control" ID="Durum" runat="server">
+                                                    <asp:ListItem>Aktif</asp:ListItem>
+                                                    <asp:ListItem>Pasif</asp:ListItem>
+                                                </asp:DropDownList>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6"></div>
                                         <div class="col-sm-6">
-                                            <button type="button" class="btn btn-block bg-gradient-success">Kaydet</button>
+                                            <asp:Button CssClass="btn btn-block bg-gradient-success" runat="server" OnClick="Kaydet_Click" Text="Kaydet" />
                                         </div>
                                     </div>
                                 </div>
