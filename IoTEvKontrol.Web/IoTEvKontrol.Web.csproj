@@ -110,6 +110,7 @@
     <Content Include="EvBilgisi.aspx" />
     <Content Include="Giris.aspx" />
     <Content Include="KullaniciEkle.aspx" />
+    <Content Include="KullaniciGuncelle.aspx" />
     <Content Include="Kullanicilar.aspx" />
     <Content Include="OdaEkle.aspx" />
     <Content Include="Odalar.aspx" />
@@ -2066,6 +2067,7 @@
     <Content Include="Resource\Template\plugins\uplot\uPlot.min.css" />
     <Content Include="Resource\Template\starter.html" />
     <Content Include="RolEkle.aspx" />
+    <Content Include="RolGuncelle.aspx" />
     <Content Include="Roller.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -2077,6 +2079,7 @@
     <Compile Include="Anasayfa.Master.designer.cs">
       <DependentUpon>Anasayfa.Master</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="CihazEkle.aspx.cs">
       <DependentUpon>CihazEkle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2119,6 +2122,13 @@
     <Compile Include="KullaniciEkle.aspx.designer.cs">
       <DependentUpon>KullaniciEkle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="KullaniciGuncelle.aspx.cs">
+      <DependentUpon>KullaniciGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KullaniciGuncelle.aspx.designer.cs">
+      <DependentUpon>KullaniciGuncelle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Kullanicilar.aspx.cs">
       <DependentUpon>Kullanicilar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2147,6 +2157,13 @@
     </Compile>
     <Compile Include="RolEkle.aspx.designer.cs">
       <DependentUpon>RolEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RolGuncelle.aspx.cs">
+      <DependentUpon>RolGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RolGuncelle.aspx.designer.cs">
+      <DependentUpon>RolGuncelle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Roller.aspx.cs">
       <DependentUpon>Roller.aspx</DependentUpon>

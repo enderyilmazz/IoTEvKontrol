@@ -21,6 +21,30 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <asp:PlaceHolder ID="BasariMesaj" runat="server" Visible="false">
+                    <div class="col-12">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Başarılı!</strong>
+                            Kullanıcı silindi.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </asp:PlaceHolder>
+                <asp:PlaceHolder ID="HataMesaj" runat="server" Visible="false">
+                    <div class="col-12">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Başarısız!</strong>
+                            Kullanıcı silinemedi.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </asp:PlaceHolder>
+            </div>
+            <div class="row">
                 <div class="col-12">
                     <div class="card card-info">
                         <div class="card-header">
@@ -39,64 +63,45 @@
                         </div>
                         <div class="card-body table-responsive p-0">
                             <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 1%">#</th>
-                                        <th style="width: auto">Kullanıcı</th>
-                                        <th style="width: auto">Oluşturma</th>
-                                        <th style="width: auto">Rol</th>
-                                        <th style="width: auto">Durum</th>
-                                        <th style="width: auto"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <a>@enderyilmaz</a>
-                                        </td>
-                                        <td>
-                                            <a>12.05.2021</a>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-danger">Yönetici</span>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-success">Aktif</span>
-                                        </td>
-                                        <td class="text-right">
-                                            <a class="btn btn-info btn-sm" href="#">
+                                <asp:Repeater ID="KullaniciTablo" runat="server" OnItemCommand="KullaniciTabloCommand">
+                                    <HeaderTemplate>
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 1%">#</th>
+                                                <th style="width: auto">Kullanıcı Adı</th>
+                                                <th style="width: auto">E-posta</th>
+                                                <th style="width: auto">Rol</th>
+                                                <th style="width: auto"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <a>@<%# Eval("UserName") %></a>
+                                            </td>
+                                            <td>
+                                                <a><%# Eval("Email") %></a>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-danger">Yönetici</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <asp:LinkButton CssClass="btn btn-info btn-sm" ID="LinkButton1" runat="server" CommandName="kullaniciGuncelle" CommandArgument='<%# Eval("Id") %>'>
                                                 <i class="fas fa-pencil-alt"></i>
-                                            </a>
-                                            <a class="btn btn-danger btn-sm" href="#">
+                                                </asp:LinkButton>
+                                                <asp:LinkButton CssClass="btn btn-danger btn-sm" ID="LinkButton2" runat="server" CommandName="kullaniciSil" CommandArgument='<%# Eval("Id") %>'>
                                                 <i class="fas fa-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <a>@user</a>
-                                        </td>
-                                        <td>
-                                            <a>12.05.2021</a>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-primary">Kullanıcı</span>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-secondary">Pasif</span>
-                                        </td>
-                                        <td class="text-right">
-                                            <a class="btn btn-info btn-sm" href="#">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a>
-                                            <a class="btn btn-danger btn-sm" href="#">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                                </asp:LinkButton>
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </tbody>
+                                    </FooterTemplate>
+                                </asp:Repeater>
                             </table>
                         </div>
                     </div>

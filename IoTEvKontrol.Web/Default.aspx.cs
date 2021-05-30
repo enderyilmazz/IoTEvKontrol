@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -37,8 +38,9 @@ namespace IoTEvKontrol.Web
             //Rol.Aciklama = "User2";
             //Rol.Guncelle(6);
 
-            //GridView1.DataSource = Rol.Listele();
-            //GridView1.DataBind();
+            IoTEvKontrol.Business.Roller Rol = new IoTEvKontrol.Business.Roller();
+            rptOrnek.DataSource = Rol.Listele();
+            rptOrnek.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)

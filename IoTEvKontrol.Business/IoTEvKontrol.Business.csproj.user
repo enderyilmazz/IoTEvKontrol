@@ -3,4 +3,9 @@
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Project</StartAction>
+    <StartProgram>C:\Program Files\Google\Chrome\Application\chrome.exe</StartProgram>
+    <StartURL>C:\Program Files\Google\Chrome\Application\chrome.exe</StartURL>
+  </PropertyGroup>
 </Project>

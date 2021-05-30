@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using IoTEvKontrol.DataAccess.Identity;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -20,19 +21,31 @@ namespace IoTEvKontrol.Web
                     Response.Redirect("~/Giris.aspx");
                 }
             }
+            var RolStore = new RoleStore<IdentityRole>();
+            var RolManager = new RoleManager<IdentityRole>(RolStore);
+            foreach (var Rol in RolManager.Roles)
+            {
+                Roller.Items.Add(Rol.Name);
+            }
         }
 
         protected void Kaydet_Click(object sender, EventArgs e)
         {
-            var userStore = new UserStore<IdentityUser>();
-            var manager = new UserManager<IdentityUser>(userStore);
-
-            var kullanici = new IdentityUser() { UserName = KullaniciAdi.Text };
-            IdentityResult sonuc = manager.Create(kullanici, Sifre.Text);
-            if (sonuc.Succeeded)
+            var UserStore = new UserStore<IdentityUser>();
+            var UserManager = new UserManager<IdentityUser>(UserStore);
+            var Kullanici = new IdentityUser()
             {
+                UserName = KullaniciAdi.Text,
+                Email = Eposta.Text,
+                PhoneNumber = Telefon.Text
+            };
+
+            IdentityResult Sonuc = UserManager.Create(Kullanici, Sifre.Text);
+            if (Sonuc.Succeeded)
+            {
+                UserManager.AddToRole(Kullanici.Id, Roller.SelectedValue);
                 BasariMesaj.Visible = true;
-                HataMesaj.Visible = false;                 
+                HataMesaj.Visible = false;
             }
             else
             {

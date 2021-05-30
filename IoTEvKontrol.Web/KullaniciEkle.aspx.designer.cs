@@ -96,13 +96,13 @@ namespace IoTEvKontrol.Web
         protected global::System.Web.UI.WebControls.TextBox SifreTekrar;
 
         /// <summary>
-        /// Rol control.
+        /// Roller control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Rol;
+        protected global::System.Web.UI.WebControls.DropDownList Roller;
 
         /// <summary>
         /// Durum control.

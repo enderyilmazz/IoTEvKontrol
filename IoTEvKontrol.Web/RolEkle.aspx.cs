@@ -1,4 +1,7 @@
-﻿using System;
+﻿using IoTEvKontrol.DataAccess.Identity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +17,24 @@ namespace IoTEvKontrol.Web
             if (!User.Identity.IsAuthenticated)
             {
                 Response.Redirect("~/Giris.aspx");
+            }
+        }
+
+        protected void Kaydet_Click(object sender, EventArgs e)
+        {
+            var RolStore = new RoleStore<IdentityRole>();
+            var RolManager = new RoleManager<IdentityRole>(RolStore);
+            var Rol = new IdentityRole() { Name = RolAd.Text };
+            IdentityResult Sonuc = RolManager.Create(Rol);
+            if (Sonuc.Succeeded)
+            {
+                BasariMesaj.Visible = true;
+                HataMesaj.Visible = false;
+            }
+            else
+            {
+                BasariMesaj.Visible = false;
+                HataMesaj.Visible = true;
             }
         }
     }

@@ -122,12 +122,8 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <asp:Label runat="server" AssociatedControlID="Rol">Rol</asp:Label>
-                                                <asp:DropDownList CssClass="form-control" ID="Rol" runat="server">
-                                                    <asp:ListItem>Üst Düz. Yönetici</asp:ListItem>
-                                                    <asp:ListItem>Yönetici</asp:ListItem>
-                                                    <asp:ListItem>Kullanıcı</asp:ListItem>
-                                                    <asp:ListItem>Misafir</asp:ListItem>
+                                                <asp:Label runat="server" AssociatedControlID="Roller">Rol</asp:Label>
+                                                <asp:DropDownList CssClass="form-control" ID="Roller" runat="server">
                                                 </asp:DropDownList>
                                             </div>
                                         </div>

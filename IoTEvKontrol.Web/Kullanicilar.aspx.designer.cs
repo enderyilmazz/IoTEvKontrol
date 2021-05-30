@@ -13,5 +13,32 @@ namespace IoTEvKontrol.Web
 
     public partial class Kullanicilar
     {
+
+        /// <summary>
+        /// BasariMesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder BasariMesaj;
+
+        /// <summary>
+        /// HataMesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder HataMesaj;
+
+        /// <summary>
+        /// KullaniciTablo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater KullaniciTablo;
     }
 }
