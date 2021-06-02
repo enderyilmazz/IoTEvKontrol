@@ -1,5 +1,4 @@
-﻿using IoTEvKontrol.DataAccess.Identity;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -44,6 +43,7 @@ namespace IoTEvKontrol.Web
             if (Sonuc.Succeeded)
             {
                 UserManager.AddToRole(Kullanici.Id, Roller.SelectedValue);
+                YeniKullanici.Text = KullaniciAdi.Text;
                 BasariMesaj.Visible = true;
                 HataMesaj.Visible = false;
             }

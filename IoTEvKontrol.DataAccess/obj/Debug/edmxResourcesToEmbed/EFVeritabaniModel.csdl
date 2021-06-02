@@ -1,47 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="evkontrolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="evkontrolEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cihazlar" EntityType="evkontrolModel.Cihazlar" />
+    <EntitySet Name="Ev" EntityType="evkontrolModel.Ev" />
+    <EntitySet Name="Oda" EntityType="evkontrolModel.Oda" />
+    <EntitySet Name="Sistem" EntityType="evkontrolModel.Sistem" />
+    <AssociationSet Name="FK_Oda_Cihazlar" Association="evkontrolModel.FK_Oda_Cihazlar">
+      <End Role="Cihazlar" EntitySet="Cihazlar" />
+      <End Role="Oda" EntitySet="Oda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oda_Ev1" Association="evkontrolModel.FK_Oda_Ev1">
+      <End Role="Ev" EntitySet="Ev" />
+      <End Role="Oda" EntitySet="Oda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sistem_Oda" Association="evkontrolModel.FK_Sistem_Oda">
+      <End Role="Oda" EntitySet="Oda" />
+      <End Role="Sistem" EntitySet="Sistem" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Cihazlar">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="OdaID" Type="Int32" />
-    <Property Name="CihazAdi" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
-    <Property Name="Tip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="Numara" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="Durum" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="Oda" Relationship="Self.FK_Cihazlar_Oda" FromRole="Cihazlar" ToRole="Oda" />
-    <NavigationProperty Name="Sistem" Relationship="Self.FK_Sistem_Cihazlar" FromRole="Cihazlar" ToRole="Sistem" />
+    <Property Name="CihazAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IpAdres" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PortNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Oda" Relationship="evkontrolModel.FK_Oda_Cihazlar" FromRole="Cihazlar" ToRole="Oda" />
   </EntityType>
   <EntityType Name="Ev">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="EvAdi" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
-    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="Adres" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
-    <Property Name="IpAdres" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="Oda" Relationship="Self.FK_Oda_Ev" FromRole="Ev" ToRole="Oda" />
-  </EntityType>
-  <EntityType Name="Kullanicilar">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RolID" Type="Int32" />
-    <Property Name="Ad" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="Soyad" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="Eposta" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
-    <Property Name="Resim" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
-    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
-    <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="Roller" Relationship="Self.FK_Kullanicilar_Roller" FromRole="Kullanicilar" ToRole="Roller" />
-    <NavigationProperty Name="Sistem" Relationship="Self.FK_Sistem_Kullanicilar" FromRole="Kullanicilar" ToRole="Sistem" />
+    <Property Name="EvAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IpAdres" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Oda" Relationship="evkontrolModel.FK_Oda_Ev1" FromRole="Ev" ToRole="Oda" />
   </EntityType>
   <EntityType Name="Oda">
     <Key>
@@ -49,20 +46,12 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EvID" Type="Int32" />
-    <Property Name="OdaAdi" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
-    <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="Cihazlar" Relationship="Self.FK_Cihazlar_Oda" FromRole="Oda" ToRole="Cihazlar" />
-    <NavigationProperty Name="Ev" Relationship="Self.FK_Oda_Ev" FromRole="Oda" ToRole="Ev" />
-    <NavigationProperty Name="Sistem" Relationship="Self.FK_Sistem_Oda" FromRole="Oda" ToRole="Sistem" />
-  </EntityType>
-  <EntityType Name="Roller">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RolAdi" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
-    <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="Kullanicilar" Relationship="Self.FK_Kullanicilar_Roller" FromRole="Roller" ToRole="Kullanicilar" />
+    <Property Name="CihazID" Type="Int32" />
+    <Property Name="OdaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cihazlar" Relationship="evkontrolModel.FK_Oda_Cihazlar" FromRole="Oda" ToRole="Cihazlar" />
+    <NavigationProperty Name="Ev" Relationship="evkontrolModel.FK_Oda_Ev1" FromRole="Oda" ToRole="Ev" />
+    <NavigationProperty Name="Sistem" Relationship="evkontrolModel.FK_Sistem_Oda" FromRole="Oda" ToRole="Sistem" />
   </EntityType>
   <EntityType Name="Sistem">
     <Key>
@@ -71,52 +60,27 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="KullaniciID" Type="Int32" />
     <Property Name="OdaID" Type="Int32" />
-    <Property Name="CihazID" Type="Int32" />
-    <Property Name="IslemTipi" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="Tarih" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="Veri" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
-    <Property Name="Durum" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="Cihazlar" Relationship="Self.FK_Sistem_Cihazlar" FromRole="Sistem" ToRole="Cihazlar" />
-    <NavigationProperty Name="Kullanicilar" Relationship="Self.FK_Sistem_Kullanicilar" FromRole="Sistem" ToRole="Kullanicilar" />
-    <NavigationProperty Name="Oda" Relationship="Self.FK_Sistem_Oda" FromRole="Sistem" ToRole="Oda" />
+    <Property Name="IslemTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Veri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Oda" Relationship="evkontrolModel.FK_Sistem_Oda" FromRole="Sistem" ToRole="Oda" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <Association Name="FK_Cihazlar_Oda">
-    <End Role="Oda" Type="Self.Oda" Multiplicity="0..1" />
-    <End Role="Cihazlar" Type="Self.Cihazlar" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Oda">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Cihazlar">
-        <PropertyRef Name="OdaID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Sistem_Cihazlar">
-    <End Role="Cihazlar" Type="Self.Cihazlar" Multiplicity="0..1" />
-    <End Role="Sistem" Type="Self.Sistem" Multiplicity="*" />
+  <Association Name="FK_Oda_Cihazlar">
+    <End Type="evkontrolModel.Cihazlar" Role="Cihazlar" Multiplicity="0..1" />
+    <End Type="evkontrolModel.Oda" Role="Oda" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cihazlar">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="Sistem">
+      <Dependent Role="Oda">
         <PropertyRef Name="CihazID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Oda_Ev">
-    <End Role="Ev" Type="Self.Ev" Multiplicity="0..1" />
-    <End Role="Oda" Type="Self.Oda" Multiplicity="*" />
+  <Association Name="FK_Oda_Ev1">
+    <End Type="evkontrolModel.Ev" Role="Ev" Multiplicity="0..1" />
+    <End Type="evkontrolModel.Oda" Role="Oda" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Ev">
         <PropertyRef Name="ID" />
@@ -126,33 +90,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Kullanicilar_Roller">
-    <End Role="Roller" Type="Self.Roller" Multiplicity="0..1" />
-    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Roller">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Kullanicilar">
-        <PropertyRef Name="RolID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Sistem_Kullanicilar">
-    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
-    <End Role="Sistem" Type="Self.Sistem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Kullanicilar">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Sistem">
-        <PropertyRef Name="KullaniciID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Sistem_Oda">
-    <End Role="Oda" Type="Self.Oda" Multiplicity="0..1" />
-    <End Role="Sistem" Type="Self.Sistem" Multiplicity="*" />
+    <End Type="evkontrolModel.Oda" Role="Oda" Multiplicity="0..1" />
+    <End Type="evkontrolModel.Sistem" Role="Sistem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Oda">
         <PropertyRef Name="ID" />
@@ -161,135 +101,5 @@
         <PropertyRef Name="OdaID" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="evkontrolEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Cihazlar" EntityType="Self.Cihazlar" />
-    <EntitySet Name="Ev" EntityType="Self.Ev" />
-    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
-    <EntitySet Name="Oda" EntityType="Self.Oda" />
-    <EntitySet Name="Roller" EntityType="Self.Roller" />
-    <EntitySet Name="Sistem" EntityType="Self.Sistem" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <AssociationSet Name="FK_Cihazlar_Oda" Association="Self.FK_Cihazlar_Oda">
-      <End Role="Oda" EntitySet="Oda" />
-      <End Role="Cihazlar" EntitySet="Cihazlar" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Sistem_Cihazlar" Association="Self.FK_Sistem_Cihazlar">
-      <End Role="Cihazlar" EntitySet="Cihazlar" />
-      <End Role="Sistem" EntitySet="Sistem" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Oda_Ev" Association="Self.FK_Oda_Ev">
-      <End Role="Ev" EntitySet="Ev" />
-      <End Role="Oda" EntitySet="Oda" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Kullanicilar_Roller" Association="Self.FK_Kullanicilar_Roller">
-      <End Role="Roller" EntitySet="Roller" />
-      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Sistem_Kullanicilar" Association="Self.FK_Sistem_Kullanicilar">
-      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
-      <End Role="Sistem" EntitySet="Sistem" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Sistem_Oda" Association="Self.FK_Sistem_Oda">
-      <End Role="Oda" EntitySet="Oda" />
-      <End Role="Sistem" EntitySet="Sistem" />
-    </AssociationSet>
-    <EntitySet Name="AspNetRoles" EntityType="evkontrolModel.AspNetRoles" />
-    <EntitySet Name="AspNetUserClaims" EntityType="evkontrolModel.AspNetUserClaims" />
-    <EntitySet Name="AspNetUserLogins" EntityType="evkontrolModel.AspNetUserLogins" />
-    <EntitySet Name="AspNetUsers" EntityType="evkontrolModel.AspNetUsers" />
-    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="evkontrolModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-    </AssociationSet>
-    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="evkontrolModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
-    </AssociationSet>
-    <AssociationSet Name="AspNetUserRoles" Association="evkontrolModel.AspNetUserRoles">
-      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="AspNetRoles">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="AspNetUsers" Relationship="evkontrolModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
-  </EntityType>
-  <EntityType Name="AspNetUserClaims">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="AspNetUsers" Relationship="evkontrolModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
-  </EntityType>
-  <EntityType Name="AspNetUserLogins">
-    <Key>
-      <PropertyRef Name="LoginProvider" />
-      <PropertyRef Name="ProviderKey" />
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="AspNetUsers" Relationship="evkontrolModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
-  </EntityType>
-  <EntityType Name="AspNetUsers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
-    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
-    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
-    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
-    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
-    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
-    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="AspNetUserClaims" Relationship="evkontrolModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
-    <NavigationProperty Name="AspNetUserLogins" Relationship="evkontrolModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
-    <NavigationProperty Name="AspNetRoles" Relationship="evkontrolModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
-  </EntityType>
-  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-    <End Type="evkontrolModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="evkontrolModel.AspNetUserClaims" Role="AspNetUserClaims" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUsers">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserClaims">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-    <End Type="evkontrolModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="evkontrolModel.AspNetUserLogins" Role="AspNetUserLogins" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUsers">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserLogins">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="AspNetUserRoles">
-    <End Type="evkontrolModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
-    <End Type="evkontrolModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
   </Association>
 </Schema>

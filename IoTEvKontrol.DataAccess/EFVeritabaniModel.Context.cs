@@ -27,14 +27,7 @@ namespace IoTEvKontrol.DataAccess
     
         public virtual DbSet<Cihazlar> Cihazlar { get; set; }
         public virtual DbSet<Ev> Ev { get; set; }
-        public virtual DbSet<Kullanicilar> Kullanicilar { get; set; }
         public virtual DbSet<Oda> Oda { get; set; }
-        public virtual DbSet<Roller> Roller { get; set; }
         public virtual DbSet<Sistem> Sistem { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }

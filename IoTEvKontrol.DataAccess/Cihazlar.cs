@@ -17,19 +17,15 @@ namespace IoTEvKontrol.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cihazlar()
         {
-            this.Sistem = new HashSet<Sistem>();
+            this.Oda = new HashSet<Oda>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> OdaID { get; set; }
         public string CihazAdi { get; set; }
-        public string Tip { get; set; }
-        public string Numara { get; set; }
-        public string Durum { get; set; }
-        public string Aciklama { get; set; }
+        public string IpAdres { get; set; }
+        public string PortNo { get; set; }
     
-        public virtual Oda Oda { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sistem> Sistem { get; set; }
+        public virtual ICollection<Oda> Oda { get; set; }
     }
 }

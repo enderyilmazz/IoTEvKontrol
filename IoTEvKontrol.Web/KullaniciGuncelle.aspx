@@ -41,12 +41,13 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="Ad">Ad</asp:Label>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="Ad" placeholder="Ad" />
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="Soyad">Soyad</asp:Label>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="Soyad" placeholder="Soyad" />
+                                        <asp:Label runat="server" AssociatedControlID="KullaniciAdi">Kullanıcı Adı</asp:Label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">@</span>
+                                            </div>
+                                            <asp:TextBox CssClass="form-control" type="text" runat="server" ID="KullaniciAdi" Enabled="false" placeholder="Kullanıcı Adı" />
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Telefon">Telefon</asp:Label>
@@ -68,15 +69,6 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="KullaniciAdi">Kullanıcı Adı</asp:Label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">@</span>
-                                            </div>
-                                            <asp:TextBox CssClass="form-control" type="text" runat="server" ID="KullaniciAdi" placeholder="Kullanıcı Adı" />
-                                        </div>
-                                    </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="MevcutSifre">Mevcut Şifre</asp:Label>
                                         <div class="input-group">

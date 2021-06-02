@@ -17,14 +17,11 @@ namespace IoTEvKontrol.DataAccess
         public int ID { get; set; }
         public Nullable<int> KullaniciID { get; set; }
         public Nullable<int> OdaID { get; set; }
-        public Nullable<int> CihazID { get; set; }
         public string IslemTipi { get; set; }
         public string Tarih { get; set; }
         public string Veri { get; set; }
         public string Durum { get; set; }
     
-        public virtual Cihazlar Cihazlar { get; set; }
-        public virtual Kullanicilar Kullanicilar { get; set; }
         public virtual Oda Oda { get; set; }
     }
 }

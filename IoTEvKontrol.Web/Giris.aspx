@@ -49,14 +49,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Beni hatırla
-                                </label>
-                            </div>
-                        </div>
+                        <div class="col-8"></div>
                         <div class="col-4">
                             <asp:Button CssClass="btn btn-primary btn-block" runat="server" OnClick="Giris_Click" Text="Giriş Yap" />
                         </div>

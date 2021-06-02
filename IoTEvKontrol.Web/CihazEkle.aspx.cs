@@ -16,5 +16,25 @@ namespace IoTEvKontrol.Web
                 Response.Redirect("~/Giris.aspx");
             }
         }
+
+        protected void Kaydet_Click(object sender, EventArgs e)
+        {
+            IoTEvKontrol.Business.Cihazlar Cihaz = new IoTEvKontrol.Business.Cihazlar();
+            Cihaz.CihazAdi = CihazAd.Text;
+            Cihaz.IpAdres = IpNo.Text;
+            Cihaz.PortNo = PortNo.Text;
+            var sonuc = Cihaz.Ekle();
+            if (sonuc == 1)
+            {
+                YeniCihaz.Text = CihazAd.Text;
+                BasariMesaj.Visible = true;
+                HataMesaj.Visible = false;
+            }
+            else
+            {
+                BasariMesaj.Visible = false;
+                HataMesaj.Visible = true;
+            }
+        }
     }
 }

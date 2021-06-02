@@ -18,29 +18,6 @@ namespace IoTEvKontrol.Web
             {
                 Response.Redirect("~/Giris.aspx");
             }
-            //string baglanti = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
-            //SqlConnection baglan = new SqlConnection(baglanti);
-            //SqlCommand sorgu = new SqlCommand("SELECT * FROM Roller",baglan);
-            //SqlDataReader oku;
-            //baglan.Open();
-            //oku = sorgu.ExecuteReader();
-            //GridView1.DataSource = gelen;
-            //GridView1.DataBind();
-            //baglan.Close();
-
-            //IoTEvKontrol.Business.Roller Rol = new IoTEvKontrol.Business.Roller();
-            //Rol.RolAdi = "Deneme";
-            //Rol.Aciklama = "Test";
-            //Rol.Ekle();
-
-            //IoTEvKontrol.Business.Roller Rol = new IoTEvKontrol.Business.Roller();
-            //Rol.RolAdi = "User2";
-            //Rol.Aciklama = "User2";
-            //Rol.Guncelle(6);
-
-            IoTEvKontrol.Business.Roller Rol = new IoTEvKontrol.Business.Roller();
-            rptOrnek.DataSource = Rol.Listele();
-            rptOrnek.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -69,8 +46,7 @@ namespace IoTEvKontrol.Web
             Cihaz.Bilgi = "c";
             Label1.Text = "Sıcaklık : " + Cihaz.VeriGonderAl() + "°C";
             TextBox1.Text = Cihaz.VeriGonderAl();
-            int abc = Convert.ToInt32(Cihaz.VeriGonderAl());
-            TextBox1.Text = abc.ToString();
+
 
             string dene = "$(function() {$('.knob').knob({ })})";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "dene", dene, true);

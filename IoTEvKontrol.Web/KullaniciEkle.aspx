@@ -25,7 +25,9 @@
                     <div class="col-12">
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>Başarılı!</strong>
-                            Yeni kullanıcı kaydedildi.
+                            Yeni kullanıcı
+                            <strong><asp:Label ID="YeniKullanici" runat="server" Text=""></asp:Label></strong>
+                            kaydedildi.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -65,12 +67,13 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="Ad">Ad</asp:Label>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="Ad" placeholder="Ad" />
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="Soyad">Soyad</asp:Label>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="Soyad" placeholder="Soyad" />
+                                        <asp:Label runat="server" AssociatedControlID="KullaniciAdi">Kullanıcı Adı</asp:Label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">@</span>
+                                            </div>
+                                            <asp:TextBox CssClass="form-control" type="text" runat="server" ID="KullaniciAdi" placeholder="Kullanıcı Adı" />
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Telefon">Telefon</asp:Label>
@@ -93,15 +96,6 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="KullaniciAdi">Kullanıcı Adı</asp:Label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">@</span>
-                                            </div>
-                                            <asp:TextBox CssClass="form-control" type="text" runat="server" ID="KullaniciAdi" placeholder="Kullanıcı Adı" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Sifre">Şifre</asp:Label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -120,19 +114,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-12">
                                             <div class="form-group">
                                                 <asp:Label runat="server" AssociatedControlID="Roller">Rol</asp:Label>
                                                 <asp:DropDownList CssClass="form-control" ID="Roller" runat="server">
-                                                </asp:DropDownList>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <asp:Label runat="server" AssociatedControlID="Durum">Durum</asp:Label>
-                                                <asp:DropDownList CssClass="form-control" ID="Durum" runat="server">
-                                                    <asp:ListItem>Aktif</asp:ListItem>
-                                                    <asp:ListItem>Pasif</asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                         </div>

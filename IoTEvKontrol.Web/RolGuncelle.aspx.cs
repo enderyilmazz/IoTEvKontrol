@@ -17,11 +17,13 @@ namespace IoTEvKontrol.Web
             {
                 Response.Redirect("~/Giris.aspx");
             }
-            var RolStore = new RoleStore<IdentityRole>();
-            var RolManager = new RoleManager<IdentityRole>(RolStore);
-
-            IdentityRole Rol = RolManager.FindById(Request.QueryString["ID"].ToString());
-            RolAd.Text = Rol.Name;
+            if (!Page.IsPostBack)
+            {
+                var RolStore = new RoleStore<IdentityRole>();
+                var RolManager = new RoleManager<IdentityRole>(RolStore);
+                IdentityRole Rol = RolManager.FindById(Request.QueryString["ID"].ToString());
+                RolAd.Text = Rol.Name;
+            }           
         }
 
         protected void Guncelle_Click(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace IoTEvKontrol.Web
             var RolStore = new RoleStore<IdentityRole>();
             var RolManager = new RoleManager<IdentityRole>(RolStore);
             IdentityRole Rol = RolManager.FindById(Request.QueryString["ID"].ToString());
-            Rol.Name = YeniRolAd.Text;
+            Rol.Name = RolAd.Text;
             IdentityResult Sonuc = RolManager.Update(Rol);
             if (Sonuc.Succeeded)
             {

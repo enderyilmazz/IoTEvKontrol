@@ -24,10 +24,8 @@ namespace IoTEvKontrol.Web
 
             var UserStore = new UserStore<IdentityUser>();
             var UserManager = new UserManager<IdentityUser>(UserStore);
-
             var RolStore = new RoleStore<IdentityRole>();
             var RolManager = new RoleManager<IdentityRole>(RolStore);
-
             KullaniciTablo.DataSource = UserManager.Users.ToList();
             KullaniciTablo.DataBind();
         }
@@ -42,12 +40,10 @@ namespace IoTEvKontrol.Web
                 IdentityResult Sonuc = UserManager.Delete(Kullanici);
                 if (Sonuc.Succeeded)
                 {
-                    BasariMesaj.Visible = true;
-                    HataMesaj.Visible = false;
+                    Response.Redirect(Request.RawUrl);
                 }
                 else
                 {
-                    BasariMesaj.Visible = false;
                     HataMesaj.Visible = true;
                 }
             }

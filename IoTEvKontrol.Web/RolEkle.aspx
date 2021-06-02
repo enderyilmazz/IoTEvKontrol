@@ -25,7 +25,10 @@
                     <div class="col-12">
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>Başarılı!</strong>
-                            Yeni rol kaydedildi.
+                            Yeni rol
+                            <strong>
+                                <asp:Label ID="YeniRol" runat="server" Text=""></asp:Label></strong>
+                            kaydedildi.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -67,7 +70,7 @@
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="RolAd">Rol Adı</asp:Label>
                                         <asp:TextBox CssClass="form-control" runat="server" ID="RolAd" placeholder="Rol Adı" />
-                                    </div> 
+                                    </div>
                                     <div class="form-group">
                                         <asp:Button CssClass="btn btn-block bg-gradient-success w-25 float-right" runat="server" OnClick="Kaydet_Click" Text="Kaydet" />
                                     </div>

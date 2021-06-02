@@ -34,12 +34,10 @@ namespace IoTEvKontrol.Web
                 IdentityResult Sonuc = RolManager.Delete(Rol);
                 if (Sonuc.Succeeded)
                 {
-                    BasariMesaj.Visible = true;
-                    HataMesaj.Visible = false;
+                    Response.Redirect(Request.RawUrl);
                 }
                 else
                 {
-                    BasariMesaj.Visible = false;
                     HataMesaj.Visible = true;
                 }
             }

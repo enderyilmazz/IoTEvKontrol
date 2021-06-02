@@ -1,5 +1,4 @@
-﻿using IoTEvKontrol.DataAccess.Identity;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -28,6 +27,7 @@ namespace IoTEvKontrol.Web
             IdentityResult Sonuc = RolManager.Create(Rol);
             if (Sonuc.Succeeded)
             {
+                YeniRol.Text = RolAd.Text;
                 BasariMesaj.Visible = true;
                 HataMesaj.Visible = false;
             }

@@ -83,18 +83,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AspNetRoles.cs">
-      <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserClaims.cs">
-      <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserLogins.cs">
-      <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUsers.cs">
-      <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Cihazlar.cs">
       <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
     </Compile>
@@ -117,21 +105,11 @@
     <Compile Include="Ev.cs">
       <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Kullanicilar.cs">
-      <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Oda.cs">
       <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roller.cs">
-      <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Sistem.cs">
-      <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
       <DependentUpon>EFVeritabaniModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

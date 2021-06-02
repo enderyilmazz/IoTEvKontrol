@@ -8,7 +8,6 @@ C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Entit
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.csprojAssemblyReference.cache
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.csproj.CopyComplete
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
@@ -29,3 +28,4 @@ C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Micro
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.DataAccess\obj\Debug\IoTEvKontrol.DataAccess.csproj.AssemblyReference.cache

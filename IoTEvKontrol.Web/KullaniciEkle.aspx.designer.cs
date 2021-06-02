@@ -24,6 +24,15 @@ namespace IoTEvKontrol.Web
         protected global::System.Web.UI.WebControls.PlaceHolder BasariMesaj;
 
         /// <summary>
+        /// YeniKullanici control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label YeniKullanici;
+
+        /// <summary>
         /// HataMesaj control.
         /// </summary>
         /// <remarks>
@@ -33,22 +42,13 @@ namespace IoTEvKontrol.Web
         protected global::System.Web.UI.WebControls.PlaceHolder HataMesaj;
 
         /// <summary>
-        /// Ad control.
+        /// KullaniciAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Ad;
-
-        /// <summary>
-        /// Soyad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Soyad;
+        protected global::System.Web.UI.WebControls.TextBox KullaniciAdi;
 
         /// <summary>
         /// Telefon control.
@@ -67,15 +67,6 @@ namespace IoTEvKontrol.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Eposta;
-
-        /// <summary>
-        /// KullaniciAdi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox KullaniciAdi;
 
         /// <summary>
         /// Sifre control.
@@ -103,14 +94,5 @@ namespace IoTEvKontrol.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Roller;
-
-        /// <summary>
-        /// Durum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Durum;
     }
 }

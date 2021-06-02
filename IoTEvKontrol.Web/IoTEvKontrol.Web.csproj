@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CihazEkle.aspx" />
+    <Content Include="CihazGuncelle.aspx" />
     <Content Include="Cihazlar.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EvBilgisi.aspx" />
@@ -112,6 +113,7 @@
     <Content Include="KullaniciEkle.aspx" />
     <Content Include="KullaniciGuncelle.aspx" />
     <Content Include="Kullanicilar.aspx" />
+    <Content Include="OdaDetay.aspx" />
     <Content Include="OdaEkle.aspx" />
     <Content Include="Odalar.aspx" />
     <Content Include="Resource\Template\dist\css\adminlte.css" />
@@ -2087,6 +2089,13 @@
     <Compile Include="CihazEkle.aspx.designer.cs">
       <DependentUpon>CihazEkle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CihazGuncelle.aspx.cs">
+      <DependentUpon>CihazGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CihazGuncelle.aspx.designer.cs">
+      <DependentUpon>CihazGuncelle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cihazlar.aspx.cs">
       <DependentUpon>Cihazlar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2135,6 +2144,13 @@
     </Compile>
     <Compile Include="Kullanicilar.aspx.designer.cs">
       <DependentUpon>Kullanicilar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OdaDetay.aspx.cs">
+      <DependentUpon>OdaDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OdaDetay.aspx.designer.cs">
+      <DependentUpon>OdaDetay.aspx</DependentUpon>
     </Compile>
     <Compile Include="OdaEkle.aspx.cs">
       <DependentUpon>OdaEkle.aspx</DependentUpon>

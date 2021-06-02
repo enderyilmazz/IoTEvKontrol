@@ -52,7 +52,6 @@ C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\roslyn\VBCSCompile
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\obj\Debug\IoTEvKontrol.Web.csprojAssemblyReference.cache
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\obj\Debug\IoTEvKontrol.Web.csproj.CoreCompileInputs.cache
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\obj\Debug\IoTEvKontrol.Web.csproj.CopyComplete
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\obj\Debug\IoTEvKontrol.Web.dll
@@ -86,3 +85,4 @@ C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\Microsoft.Owin.Sec
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\bin\Newtonsoft.Json.xml
+C:\Users\Ender\source\repos\IoTEvKontrol\IoTEvKontrol.Web\obj\Debug\IoTEvKontrol.Web.csproj.AssemblyReference.cache

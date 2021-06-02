@@ -15,6 +15,31 @@ namespace IoTEvKontrol.Web
             {
                 Response.Redirect("~/Giris.aspx");
             }
+            IoTEvKontrol.Business.Cihazlar cihazlar = new IoTEvKontrol.Business.Cihazlar();
+            var cihaz =  cihazlar.Listele();
+            CihazTablo.DataSource = cihaz;
+            CihazTablo.DataBind();
+        }
+
+        protected void CihazTabloCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "cihazSil")
+            {
+                IoTEvKontrol.Business.Cihazlar cihazlar = new IoTEvKontrol.Business.Cihazlar();
+                var Sonuc = cihazlar.Sil(Convert.ToInt32(e.CommandArgument));
+                if (Sonuc == 1)
+                {
+                    Response.Redirect(Request.RawUrl);
+                }
+                else
+                {
+                    HataMesaj.Visible = true;
+                }
+            }
+            if (e.CommandName == "cihazGuncelle")
+            {
+                Response.Redirect("~/CihazGuncelle.aspx?ID=" + e.CommandArgument.ToString() + "");
+            }
         }
     }
 }

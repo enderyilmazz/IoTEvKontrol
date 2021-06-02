@@ -60,39 +60,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:Image ID="Image1" runat="server" />
-
-                                <asp:Repeater ID="rptOrnek" runat="server">
-                                    <HeaderTemplate>
-                                        <table class="table table-striped table-hover ">
-                                            <thead>
-                                                <tr class="warning">
-                                                    <th>ID</th>
-                                                    <th>Rol</th>
-                                                    <th>Açıklama</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <tr class="active">
-                                            <td><%# Eval("ID") %></td>
-                                            <td><%# Eval("RolAdi") %></td>
-                                            <td><%# Eval("Aciklama") %></td>
-                                        </tr>
-                                    </ItemTemplate>
-                                    <AlternatingItemTemplate>
-                                        <tr class="info">
-                                            <td><%# Eval("ID") %></td>
-                                            <td><%# Eval("RolAdi") %></td>
-                                            <td><%# Eval("Aciklama") %></td>
-                                    </AlternatingItemTemplate>
-                                    <FooterTemplate>
-                                        </tbody>
-                                        </table> 
-                                    </FooterTemplate>
-                                </asp:Repeater>
-
                             </div>
                         </div>
                     </div>
