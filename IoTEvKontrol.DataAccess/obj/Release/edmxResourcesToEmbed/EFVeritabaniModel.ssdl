@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="evkontrolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cihazlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CihazAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="IpAdres" Type="nvarchar" MaxLength="15" />
+    <Property Name="PortNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ev">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EvAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="15" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="100" />
+    <Property Name="IpAdres" Type="nvarchar" MaxLength="15" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Oda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EvID" Type="int" />
+    <Property Name="CihazID" Type="int" />
+    <Property Name="OdaAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Sistem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciID" Type="int" />
+    <Property Name="OdaID" Type="int" />
+    <Property Name="IslemTipi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tarih" Type="nvarchar" MaxLength="50" />
+    <Property Name="Veri" Type="nvarchar" MaxLength="50" />
+    <Property Name="Durum" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Oda_Cihazlar">
+    <End Role="Cihazlar" Type="Self.Cihazlar" Multiplicity="0..1" />
+    <End Role="Oda" Type="Self.Oda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cihazlar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Oda">
+        <PropertyRef Name="CihazID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oda_Ev1">
+    <End Role="Ev" Type="Self.Ev" Multiplicity="0..1" />
+    <End Role="Oda" Type="Self.Oda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ev">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Oda">
+        <PropertyRef Name="EvID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sistem_Oda">
+    <End Role="Oda" Type="Self.Oda" Multiplicity="0..1" />
+    <End Role="Sistem" Type="Self.Sistem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oda">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sistem">
+        <PropertyRef Name="OdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="evkontrolModelStoreContainer">
+    <EntitySet Name="Cihazlar" EntityType="Self.Cihazlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ev" EntityType="Self.Ev" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Oda" EntityType="Self.Oda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sistem" EntityType="Self.Sistem" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Oda_Cihazlar" Association="Self.FK_Oda_Cihazlar">
+      <End Role="Cihazlar" EntitySet="Cihazlar" />
+      <End Role="Oda" EntitySet="Oda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oda_Ev1" Association="Self.FK_Oda_Ev1">
+      <End Role="Ev" EntitySet="Ev" />
+      <End Role="Oda" EntitySet="Oda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sistem_Oda" Association="Self.FK_Sistem_Oda">
+      <End Role="Oda" EntitySet="Oda" />
+      <End Role="Sistem" EntitySet="Sistem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

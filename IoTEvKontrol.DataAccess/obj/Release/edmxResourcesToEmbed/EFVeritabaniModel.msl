@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="evkontrolModelStoreContainer" CdmEntityContainer="evkontrolEntities">
+    <EntitySetMapping Name="Cihazlar">
+      <EntityTypeMapping TypeName="evkontrolModel.Cihazlar">
+        <MappingFragment StoreEntitySet="Cihazlar">
+          <ScalarProperty Name="PortNo" ColumnName="PortNo" />
+          <ScalarProperty Name="IpAdres" ColumnName="IpAdres" />
+          <ScalarProperty Name="CihazAdi" ColumnName="CihazAdi" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ev">
+      <EntityTypeMapping TypeName="evkontrolModel.Ev">
+        <MappingFragment StoreEntitySet="Ev">
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="IpAdres" ColumnName="IpAdres" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="EvAdi" ColumnName="EvAdi" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oda">
+      <EntityTypeMapping TypeName="evkontrolModel.Oda">
+        <MappingFragment StoreEntitySet="Oda">
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="OdaAdi" ColumnName="OdaAdi" />
+          <ScalarProperty Name="CihazID" ColumnName="CihazID" />
+          <ScalarProperty Name="EvID" ColumnName="EvID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sistem">
+      <EntityTypeMapping TypeName="evkontrolModel.Sistem">
+        <MappingFragment StoreEntitySet="Sistem">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Veri" ColumnName="Veri" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="IslemTipi" ColumnName="IslemTipi" />
+          <ScalarProperty Name="OdaID" ColumnName="OdaID" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -17,46 +17,39 @@ namespace IoTEvKontrol.Web
             }
             IoTEvKontrol.DataAccess.evkontrolEntities ent = new IoTEvKontrol.DataAccess.evkontrolEntities();
             var odalar = (from q in ent.Oda
-                         join w in ent.Cihazlar on q.CihazID equals w.ID
-                         select new
-                         {
-                             q.CihazID,
-                             q.OdaAdi,
-                             q.Aciklama,
-                             w.CihazAdi,
-                             w.IpAdres,
-                             w.PortNo
-                         }).ToList();
+                          join w in ent.Cihazlar on q.CihazID equals w.ID
+                          select new
+                          {
+                              q.ID,
+                              q.CihazID,
+                              q.OdaAdi,
+                              q.Aciklama,
+                              w.CihazAdi,
+                              w.IpAdres,
+                              w.PortNo
+                          }).ToList();
             OdaTablo.DataSource = odalar;
             OdaTablo.DataBind();
-
-            for (int i = 0; i < OdaTablo.Items.Count; i++)
-            {
-                var a = odalar[i];
-                IoTEvKontrol.Business.Arduino Cihaz = new IoTEvKontrol.Business.Arduino();
-                Cihaz.Ip = a.IpAdres;
-                Cihaz.Port = Convert.ToInt32(a.PortNo);
-
-                Cihaz.Bilgi = "c";
-                TextBox Sicaklik = OdaTablo.Items[i].FindControl("TextBox1") as TextBox;
-                int s = Convert.ToInt32(Cihaz.VeriGonderAl());
-                Sicaklik.Text = s.ToString();
-
-                Cihaz.Bilgi = "d";
-                TextBox Nem = OdaTablo.Items[i].FindControl("TextBox2") as TextBox;
-                Nem.Text = Cihaz.VeriGonderAl().ToString();
-                int n = Convert.ToInt32(Cihaz.VeriGonderAl());
-                Nem.Text = n.ToString();
-            }
-
         }
 
         protected void OdaTabloCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "Detay")
+            if (e.CommandName == "odaSil")
             {
-                Response.Write(e.CommandArgument.ToString());
-                Response.Redirect("~/OdaDetay.aspx?ID=" + e.CommandArgument.ToString() + "");
+                IoTEvKontrol.Business.Oda Oda = new IoTEvKontrol.Business.Oda();
+                var Sonuc = Oda.Sil(Convert.ToInt32(e.CommandArgument));
+                if (Sonuc == 1)
+                {
+                    Response.Redirect(Request.RawUrl);
+                }
+                else
+                {
+                    HataMesaj.Visible = true;
+                }
+            }
+            if (e.CommandName == "odaGuncelle")
+            {
+                Response.Redirect("~/OdaGuncelle.aspx?ID=" + e.CommandArgument.ToString() + "");
             }
         }
     }

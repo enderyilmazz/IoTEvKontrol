@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace IoTEvKontrol.Business
 {
-    class Kullanicilar
+    public class Kullanicilar
     {
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string UserName { get; set; }
     }
 }

@@ -4,11 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef558eba340a4dda8489d438139ee2e9" Name="Diagram1" ZoomLevel="62">
-        <EntityTypeShape EntityType="evkontrolModel.Cihazlar" Width="1.5" PointX="0.75" PointY="1.25" />
-        <EntityTypeShape EntityType="evkontrolModel.Ev" Width="1.5" PointX="0.75" PointY="5" />
-        <EntityTypeShape EntityType="evkontrolModel.Oda" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="evkontrolModel.Sistem" Width="1.5" PointX="5.25" PointY="1" />
+      <Diagram DiagramId="ef558eba340a4dda8489d438139ee2e9" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="evkontrolModel.AspNetRoles" Width="1.5" PointX="1.375" PointY="2.25" />
+        <EntityTypeShape EntityType="evkontrolModel.AspNetUserClaims" Width="1.5" PointX="5.875" PointY="3.375" />
+        <EntityTypeShape EntityType="evkontrolModel.AspNetUserLogins" Width="1.5" PointX="5.875" PointY="0.75" />
+        <EntityTypeShape EntityType="evkontrolModel.AspNetUsers" Width="1.5" PointX="3.625" PointY="1.125" />
+        <AssociationConnector Association="evkontrolModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="evkontrolModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="evkontrolModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="evkontrolModel.Cihazlar" Width="1.5" PointX="8" PointY="3.875" />
+        <EntityTypeShape EntityType="evkontrolModel.Ev" Width="1.5" PointX="8" PointY="0.75" />
+        <EntityTypeShape EntityType="evkontrolModel.Oda" Width="1.5" PointX="10.25" PointY="0.625" />
+        <EntityTypeShape EntityType="evkontrolModel.Sistem" Width="1.5" PointX="12.5" PointY="0.625" />
         <AssociationConnector Association="evkontrolModel.FK_Oda_Cihazlar" />
         <AssociationConnector Association="evkontrolModel.FK_Oda_Ev1" />
         <AssociationConnector Association="evkontrolModel.FK_Sistem_Oda" />

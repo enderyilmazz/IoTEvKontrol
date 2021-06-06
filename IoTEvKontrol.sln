@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTEvKontrol.DataAccess", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTEvKontrol.Web", "IoTEvKontrol.Web\IoTEvKontrol.Web.csproj", "{575C8DA9-E186-4F6A-8931-07244D8E6812}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTEvKontrol.WebService", "IoTEvKontrol.WebService\IoTEvKontrol.WebService.csproj", "{D1989250-BF2C-474F-BF90-BF0576F53A4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{575C8DA9-E186-4F6A-8931-07244D8E6812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{575C8DA9-E186-4F6A-8931-07244D8E6812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{575C8DA9-E186-4F6A-8931-07244D8E6812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1989250-BF2C-474F-BF90-BF0576F53A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1989250-BF2C-474F-BF90-BF0576F53A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1989250-BF2C-474F-BF90-BF0576F53A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1989250-BF2C-474F-BF90-BF0576F53A4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

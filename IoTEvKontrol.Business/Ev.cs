@@ -12,7 +12,6 @@ namespace IoTEvKontrol.Business
         public string EvAdi { get; set; }
         public string Telefon { get; set; }
         public string Adres { get; set; }
-        public string IpAdres { get; set; }
         public string Aciklama { get; set; }
 
         public IoTEvKontrol.DataAccess.Ev Listele()
@@ -27,7 +26,6 @@ namespace IoTEvKontrol.Business
             ev.EvAdi = EvAdi;
             ev.Telefon = Telefon;
             ev.Adres = Adres;
-            ev.IpAdres = IpAdres;
             ev.Aciklama = Aciklama;
             var sonuc = sorgu.SaveChanges();
             return sonuc;

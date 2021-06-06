@@ -24,7 +24,6 @@ namespace IoTEvKontrol.DataAccess
         public string EvAdi { get; set; }
         public string Telefon { get; set; }
         public string Adres { get; set; }
-        public string IpAdres { get; set; }
         public string Aciklama { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="evkontrolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="evkontrolEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cihazlar" EntityType="evkontrolModel.Cihazlar" />
+    <EntitySet Name="Ev" EntityType="evkontrolModel.Ev" />
+    <EntitySet Name="Oda" EntityType="evkontrolModel.Oda" />
+    <EntitySet Name="Sistem" EntityType="evkontrolModel.Sistem" />
+    <AssociationSet Name="FK_Oda_Cihazlar" Association="evkontrolModel.FK_Oda_Cihazlar">
+      <End Role="Cihazlar" EntitySet="Cihazlar" />
+      <End Role="Oda" EntitySet="Oda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oda_Ev1" Association="evkontrolModel.FK_Oda_Ev1">
+      <End Role="Ev" EntitySet="Ev" />
+      <End Role="Oda" EntitySet="Oda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sistem_Oda" Association="evkontrolModel.FK_Sistem_Oda">
+      <End Role="Oda" EntitySet="Oda" />
+      <End Role="Sistem" EntitySet="Sistem" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cihazlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CihazAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IpAdres" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PortNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Oda" Relationship="evkontrolModel.FK_Oda_Cihazlar" FromRole="Cihazlar" ToRole="Oda" />
+  </EntityType>
+  <EntityType Name="Ev">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EvAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IpAdres" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Oda" Relationship="evkontrolModel.FK_Oda_Ev1" FromRole="Ev" ToRole="Oda" />
+  </EntityType>
+  <EntityType Name="Oda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EvID" Type="Int32" />
+    <Property Name="CihazID" Type="Int32" />
+    <Property Name="OdaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cihazlar" Relationship="evkontrolModel.FK_Oda_Cihazlar" FromRole="Oda" ToRole="Cihazlar" />
+    <NavigationProperty Name="Ev" Relationship="evkontrolModel.FK_Oda_Ev1" FromRole="Oda" ToRole="Ev" />
+    <NavigationProperty Name="Sistem" Relationship="evkontrolModel.FK_Sistem_Oda" FromRole="Oda" ToRole="Sistem" />
+  </EntityType>
+  <EntityType Name="Sistem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciID" Type="Int32" />
+    <Property Name="OdaID" Type="Int32" />
+    <Property Name="IslemTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Veri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Oda" Relationship="evkontrolModel.FK_Sistem_Oda" FromRole="Sistem" ToRole="Oda" />
+  </EntityType>
+  <Association Name="FK_Oda_Cihazlar">
+    <End Type="evkontrolModel.Cihazlar" Role="Cihazlar" Multiplicity="0..1" />
+    <End Type="evkontrolModel.Oda" Role="Oda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cihazlar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Oda">
+        <PropertyRef Name="CihazID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oda_Ev1">
+    <End Type="evkontrolModel.Ev" Role="Ev" Multiplicity="0..1" />
+    <End Type="evkontrolModel.Oda" Role="Oda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ev">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Oda">
+        <PropertyRef Name="EvID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sistem_Oda">
+    <End Type="evkontrolModel.Oda" Role="Oda" Multiplicity="0..1" />
+    <End Type="evkontrolModel.Sistem" Role="Sistem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oda">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sistem">
+        <PropertyRef Name="OdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -115,6 +115,8 @@
     <Content Include="Kullanicilar.aspx" />
     <Content Include="OdaDetay.aspx" />
     <Content Include="OdaEkle.aspx" />
+    <Content Include="OdaGuncelle.aspx" />
+    <Content Include="OdaKontrol.aspx" />
     <Content Include="Odalar.aspx" />
     <Content Include="Resource\Template\dist\css\adminlte.css" />
     <Content Include="Resource\Template\dist\css\adminlte.min.css" />
@@ -2158,6 +2160,20 @@
     </Compile>
     <Compile Include="OdaEkle.aspx.designer.cs">
       <DependentUpon>OdaEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OdaGuncelle.aspx.cs">
+      <DependentUpon>OdaGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OdaGuncelle.aspx.designer.cs">
+      <DependentUpon>OdaGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OdaKontrol.aspx.cs">
+      <DependentUpon>OdaKontrol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OdaKontrol.aspx.designer.cs">
+      <DependentUpon>OdaKontrol.aspx</DependentUpon>
     </Compile>
     <Compile Include="Odalar.aspx.cs">
       <DependentUpon>Odalar.aspx</DependentUpon>

@@ -23,7 +23,6 @@ namespace IoTEvKontrol.Web
                 EvAdi.Text = ev.EvAdi;
                 Telefon.Text = ev.Telefon;
                 Adres.Text = ev.Adres;
-                IpAdres.Text = ev.IpAdres;
                 Aciklama.Text = ev.Aciklama;
                 id = ev.ID;
             }
@@ -35,7 +34,6 @@ namespace IoTEvKontrol.Web
             EvBilgi.EvAdi = EvAdi.Text;
             EvBilgi.Telefon = Telefon.Text;
             EvBilgi.Adres = Adres.Text;
-            EvBilgi.IpAdres = IpAdres.Text;
             EvBilgi.Aciklama = Aciklama.Text;
             var sonuc = EvBilgi.Guncelle(id);
             if (sonuc == 1)

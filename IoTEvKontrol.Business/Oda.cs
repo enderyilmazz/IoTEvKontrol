@@ -21,6 +21,12 @@ namespace IoTEvKontrol.Business
             return sonuc;
         }
 
+        public IoTEvKontrol.DataAccess.Oda OdaGetir(int id)
+        {
+            var aranan = sorgu.Oda.Where(p => p.ID == id).FirstOrDefault();
+            return aranan;
+        }
+
         public int Ekle()
         {
             IoTEvKontrol.DataAccess.Oda ekle = new DataAccess.Oda();

@@ -25,6 +25,10 @@ namespace IoTEvKontrol.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Cihazlar> Cihazlar { get; set; }
         public virtual DbSet<Ev> Ev { get; set; }
         public virtual DbSet<Oda> Oda { get; set; }

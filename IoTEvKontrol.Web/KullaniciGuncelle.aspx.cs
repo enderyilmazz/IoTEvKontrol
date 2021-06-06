@@ -17,6 +17,10 @@ namespace IoTEvKontrol.Web
             {
                 Response.Redirect("~/Giris.aspx");
             }
+            if (!User.IsInRole("Admin"))
+            {
+                Response.Write("Burası Yetki Dışı");
+            }
             if (!Page.IsPostBack)
             {
                 Rol.Items.Clear();
